@@ -4,32 +4,6 @@ title: MGGG Handbook
 
 This is a start-here guide for new lab members. It explains, in plain language, the methods and concepts the lab uses to study how ranked-choice voting and different district maps affect proportional representation. It is built as a **two-week plan**: each day has a short reading and one task, and section 8 lays out both weeks.
 
-## Index
-
-1. [[#1. What this lab does|What this lab does]]
-2. [[#2. Vocabulary|Vocabulary]]
-3. [[#3. The math toolkit|The math toolkit]]
-    - 3.1 [[#3.1 Group share and proportional share of seats|Group share and proportional share of seats]]
-    - 3.2 [[#3.2 Relative turnout adjustment|Relative turnout adjustment]]
-    - 3.3 [[#3.3 Cohesion and crossover|Cohesion and crossover]]
-    - 3.4 [[#3.4 Splitting support inside a slate (Dirichlet)|Splitting support inside a slate (Dirichlet)]]
-    - 3.5 [[#3.5 How many candidates run (geometric distribution)|How many candidates run (geometric distribution)]]
-    - 3.6 [[#3.6 Winning thresholds (Droop quota)|Winning thresholds (Droop quota)]]
-    - 3.7 [[#3.7 The scorecard|The scorecard]]
-4. [[#4. Election systems at a glance|Election systems at a glance]]
-5. [[#5. How a simulation runs|How a simulation runs]]
-    - 5.1 [[#5.1 Markov chains and ReCom (how GerryChain draws maps)|Markov chains and ReCom]]
-    - 5.2 [[#5.2 Reproducibility and seeds|Reproducibility and seeds]]
-    - 5.3 [[#5.3 VoteKit in 10 lines|VoteKit in 10 lines]]
-    - 5.4 [[#5.4 Run the pipeline (your first real task)|Run the pipeline (your first real task)]]
-    - 5.5 [[#5.5 The five stages (each reads the previous stage's output)|The five stages]]
-6. [[#6. Validating assumptions with community partners|Validating assumptions with community partners]]
-7. [[#7. Worked example San Diego City Council|Worked example: San Diego City Council]]
-8. [[#8. Your first two weeks|Your first two weeks]]
-    - [[#Week 1 learn and run the sample|Week 1: learn and run the sample]]
-    - [[#Week 2 run the pipeline on your own city|Week 2: run the pipeline on your own city]]
-9. [[#9. Tools and links|Tools and links]]
-
 ## 1. What this lab does
 
 We study how election rules and district maps shape **who gets represented**, using simulations. We cannot rerun a real election under different rules, so we **simulate** it.
@@ -122,7 +96,7 @@ Example: blocs of 500,000 (t = 0.8) and 200,000 (t = 0.4) give 400,000 and 80,00
 
 This parameter is important, so it is worth being precise about it. VoteKit uses a **relative** turnout: what matters is the ratio between blocs, not the absolute rates. Bloc 2 has a turnout of 0.4, but compared with bloc 1 (0.8) its relative turnout is 0.4 / 0.8 = 50%. Setting the turnouts to 1.0 and 0.5 gives 500,000 and 100,000 effective voters, and the same 16.7% share. Scaling every bloc’s turnout by the same factor never changes the result.
 
-Turnout rates come from historical data, such as the Census Bureau's Current Population Survey (CPS) voting supplement.
+Turnout rates come from historical data, such as the Census Bureau’s Current Population Survey (CPS) voting supplement.
 *Source: U.S. Census Bureau, Current Population Survey Public-Use Data.*
 
 ### 3.3 Cohesion and crossover
@@ -231,7 +205,7 @@ Why bother? If the *real* map is an extreme outlier compared with thousands of n
 
 ### 5.2 Reproducibility and seeds
 
-A **seed** makes "random" results repeatable. Configs use `"seed": 42`. Change the seed to check your conclusions don't depend on one lucky draw. Also: GerryChain needs `PYTHONHASHSEED=0` for fully repeatable chains. The Template's `run.py` handles this for you.
+A **seed** makes “random” results repeatable. Configs use `"seed": 42`. Change the seed to check your conclusions don't depend on one lucky draw. Also, GerryChain needs `PYTHONHASHSEED=0` for fully repeatable chains. The Template's `run.py` handles this for you.
 
 ### 5.3 VoteKit in 10 lines
 
@@ -260,7 +234,7 @@ Key VoteKit ideas:
 | Ballot generators | make synthetic profiles (Plackett–Luce, Bradley–Terry, slate models) |
 | CVR loaders | read real cast-vote records |
 | `FastSTV` | the faster STV used in the pipelines |
-| `tiebreak` | default `None` means a tie **raises an error**. Set it ("random", "borda") if you expect ties |
+| `tiebreak` | default `None` means a tie **raises an error**. Set it (“random”, “borda”) if you expect ties |
 
 ### 5.4 Run the pipeline (your first real task)
 
