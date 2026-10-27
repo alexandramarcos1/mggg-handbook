@@ -152,6 +152,10 @@ With 3 seats the quota is just over 25% of votes; with 1 seat it is a majority. 
 
 For each scenario we run many simulations and report two numbers per bloc: **expected seats** (the average) and the **probability of winning at least x seats**. We compare expected seats with proportional seats from 3.1. A negative gap means under-representation.
 
+![Histograms of the number of seats a bloc wins across simulations under IRV 40×1 and STV 8×5. The red dashed line marks the proportional number of seats (% VAP × available seats).](image.png)
+
+*Reading the histograms: each bar shows how often the bloc wins that many seats across simulations. Compare the bulk of the distribution (the expected number of seats) with the red dashed line (the proportional number of seats). Here the bloc is under-represented under IRV 40×1 but close to proportional under STV 8×5.*
+
 ## 4. Election systems at a glance
 
 We compare systems on how each turns the same ballots into seats. “D × m” means D districts with m seats each (see section 2).
