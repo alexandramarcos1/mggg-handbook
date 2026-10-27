@@ -1,4 +1,4 @@
-# MGGG Intern Handbook
+# MGGG Handbook
 
 Start-here guide for new lab members. Read it as a website: https://alexandramarcos1.github.io/mggg-intern-handbook/
 

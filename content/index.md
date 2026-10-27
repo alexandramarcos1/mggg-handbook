@@ -1,5 +1,5 @@
 ---
-title: MGGG Intern Handbook
+title: MGGG Handbook
 ---
 
 This is a start-here guide for new lab members. It explains, in plain language, the methods and concepts the lab uses to study how ranked-choice voting and different district maps affect proportional representation. It is built as a **two-week plan**: each day has a short reading and one task, and section 8 lays out both weeks.
